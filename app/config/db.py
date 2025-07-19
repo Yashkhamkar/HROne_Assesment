@@ -17,3 +17,12 @@ def test_connection():
     except Exception as e:
         print("❌ MongoDB connection failed:", e)
         raise
+
+def create_indexes():
+    try:
+        db.products.create_index([("name", "text")])
+        db.products.create_index("sizes.size")
+        db.orders.create_index("userId")
+        print("✅ Indexes created")
+    except Exception as e:
+        print("❌ Failed to create indexes:", e)

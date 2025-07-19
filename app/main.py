@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from config.db import test_connection
+from config.db import test_connection, create_indexes
 from routes.product_route import router as product_router
 from routes.order_route import router as order_router
 
@@ -9,11 +9,14 @@ app = FastAPI(
     version="1.0.0",
 )
 
-test_connection()  # Test the database connection on startup
+test_connection()
+create_indexes()
+
 
 @app.get("/")
 async def root():
     return {"message": "Hello, World!"}
+
 
 app.include_router(product_router)
 app.include_router(order_router)
