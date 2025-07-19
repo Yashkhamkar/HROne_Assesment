@@ -1,7 +1,7 @@
 from fastapi.responses import JSONResponse
-from config.db import db
+from app.config.db import db
 from uuid import uuid4
-from models.order_model import Order
+from app.models.order_model import Order
 
 orders = db.orders
 products = db.products

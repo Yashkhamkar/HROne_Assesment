@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from models.order_model import Order
-from controllers.order_controller import create_order, get_user_orders
+from app.models.order_model import Order
+from app.controllers.order_controller import create_order, get_user_orders
 
 router = APIRouter()
 

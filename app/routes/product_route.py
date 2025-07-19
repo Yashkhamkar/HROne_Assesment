@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from models.product_model import ProductItem
-from controllers.product_controller import create_product, list_products
+from app.models.product_model import ProductItem
+from app.controllers.product_controller import create_product, list_products
 
 router = APIRouter()
 

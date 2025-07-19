@@ -1,5 +1,5 @@
 from fastapi.responses import JSONResponse
-from config.db import db
+from app.config.db import db
 from uuid import uuid4
 
 products = db.products

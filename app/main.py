@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from config.db import test_connection, create_indexes
-from routes.product_route import router as product_router
-from routes.order_route import router as order_router
+from app.config.db import test_connection, create_indexes
+from app.routes.product_route import router as product_router
+from app.routes.order_route import router as order_router
 
 app = FastAPI(
     title="Ecommerce API",
