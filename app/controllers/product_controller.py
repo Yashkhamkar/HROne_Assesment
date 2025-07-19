@@ -39,7 +39,17 @@ def list_products(name: str = None, size: str = None, limit: int = 10, offset: i
         for product in cursor:
             product["_id"] = str(product["_id"])  # Convert ObjectId to string
             product_list.append(product)
-        return JSONResponse(status_code=200, content=product_list)
+        return JSONResponse(
+            status_code=200,
+            content={
+                "data": product_list,
+                "page": {
+                    "next": str(offset + limit),
+                    "limit": limit,
+                    "previous": max(offset - limit, 0),
+                },
+            },
+        )
 
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
