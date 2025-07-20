@@ -188,15 +188,4 @@ https://hrone-assesment.onrender.com
 Test endpoints:
 - `/products`
 - `/orders/user_122`, `/orders/user_123`, etc.
-
----
-
-## ✅ Submission Checklist
-
-- [x] FastAPI app is working
-- [x] MongoDB indexing and aggregation used
-- [x] Automated script passes
-- [x] Deployed to Render
-- [x] Public GitHub with access to `shreybatra`
-
 ---
