@@ -15,7 +15,7 @@ create_indexes()
 
 @app.get("/")
 async def root():
-    return {"message": "Hello, World!"}
+    return {"message": " Welcome to HROne assesment"}
 
 
 app.include_router(product_router)
