@@ -1,7 +1,7 @@
 
 # 🛍️ E-commerce Backend API – FastAPI + MongoDB
 
-This is a simple e-commerce backend application built with **FastAPI** and **MongoDB**. It allows you to manage products and user orders — similar to basic functionality in apps like Flipkart or Amazon.
+This is a simple e-commerce backend application built with **FastAPI** and **MongoDB**. It allows you to manage products and user orders.
 
 ---
 
