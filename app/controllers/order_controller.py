@@ -67,11 +67,18 @@ def get_user_orders(user_id: str, limit: int, offset: int):
             },
             {"$skip": offset},
             {"$limit": limit},
+            {"$addFields": {"id": {"$toString": "$_id"}}},
+            {
+                "$project": {
+                    "_id": 0,
+                    "id": 1,
+                    "items": 1,
+                    "total": 1,
+                }
+            },
         ]
 
         orders_result = list(db.orders.aggregate(pipeline))
-        for order in orders_result:
-            order["id"] = str(order.pop("_id"))
 
         return JSONResponse(
             status_code=200,

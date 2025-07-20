@@ -37,8 +37,16 @@ def list_products(name: str = None, size: str = None, limit: int = 10, offset: i
         cursor = products.find(query, {"sizes": 0}).skip(offset).limit(limit)
         product_list = []
         for product in cursor:
-            product["_id"] = str(product["_id"])  # Convert ObjectId to string
-            product_list.append(product)
+            product_list.append(
+                {
+                    "id": str(product["_id"]),
+                    "name": product["name"],
+                    "price": product["price"],
+                }
+            )
+        if not product_list:
+            return JSONResponse(status_code=404, content={"error": "No products found"})
+        
         return JSONResponse(
             status_code=200,
             content={
