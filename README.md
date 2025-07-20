@@ -63,7 +63,7 @@ List products with optional filters and pagination
 
 **Example:**
 ```
-GET /products?name=shirt&size=large&limit=5&offset=0
+GET /products?name=Denim&size=medium&limit=5&offset=0
 ```
 
 ---
